@@ -1,0 +1,33 @@
+.nav {
+  height: 90px; /* lock navbar height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; /* remove vertical padding */
+  background-color: #4f7a6a; /* lighter sage green */
+  color: #f5f0e6;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 90px; /* fits inside the fixed navbar */
+  width: 180px;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.links li:hover {
+  opacity: 0.7;
+  transition: 0.2s ease;
+}
