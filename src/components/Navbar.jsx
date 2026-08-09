@@ -12,6 +12,7 @@ export default function Navbar() {
         <li>Home</li>
         <li>Menu</li>
         <li>About</li>
+        <li>Book a table</li>
         <li>Contact</li>
       </ul>
     </nav>
