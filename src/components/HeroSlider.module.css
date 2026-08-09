@@ -45,3 +45,46 @@
   margin-top: 0.8rem;
   font-weight: 400;
 }
+
+@media (max-width: 768px) {
+  .slider {
+    height: 60vh;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+    height: 50vh;
+  }
+
+  .overlay {
+    padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}

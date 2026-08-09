@@ -32,3 +32,33 @@
   opacity: 0.7;
   transition: 0.2s ease;
 }
+
+@media (max-width: 768px) {
+  .nav {
+    height: 70px;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    max-height: 50px;
+  }
+
+  .links {
+    gap: 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    height: 60px;
+  }
+
+  .logo {
+    max-height: 42px;
+  }
+
+  .links {
+    display: none; /* hide links on very small screens */
+  }
+}
