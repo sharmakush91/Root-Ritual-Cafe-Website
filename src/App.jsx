@@ -1,13 +1,9 @@
-import HeroSlider from "./components/HeroSlider.jsx";
-import Navbar from "./components/Navbar.jsx";
-import OurStory from "./components/OurStory.jsx";
+import Home from "./components/Pages/Home.jsx";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <HeroSlider />
-      <OurStory />
+      <Home />
     </div>
   );
 }
