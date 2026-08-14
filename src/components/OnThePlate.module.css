@@ -1,0 +1,103 @@
+.plate {
+  width: 100%;
+  padding: 5rem 2rem;
+  background-color: #e9e3d6; /* slightly deeper beige */
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+  max-width: 1000px;
+  text-align: center;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+  color: #4f7a6a; /* earthy green */
+  letter-spacing: 1px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.95);
+  border-radius: 10px;
+}
+
+.description {
+  font-family: "Inter", sans-serif;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  color: #3e5f54; /* same deep green tone as OurStory text */
+  margin-bottom: 2.5rem;
+}
+
+.button {
+  margin-top: 2rem;
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background-color: #4f7a6a;
+  color: #f5f0e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button:hover {
+  background-color: #3e5f54;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .plate {
+    padding: 3rem 1.5rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .plate {
+    padding: 2.5rem 1rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .button {
+    padding: 0.7rem 1.4rem;
+    font-size: 0.9rem;
+  }
+}
