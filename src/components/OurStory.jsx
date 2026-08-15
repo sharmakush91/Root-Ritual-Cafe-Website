@@ -1,4 +1,5 @@
 import styles from "./OurStory.module.css";
+import { NavLink } from "react-router-dom";
 
 export default function OurStory() {
   return (
@@ -20,7 +21,9 @@ export default function OurStory() {
           and reconnect.
         </p>
 
-        <button className={styles.button}>Learn More</button>
+        <NavLink to="/about" className={styles.button}>
+          Learn More
+        </NavLink>
       </div>
     </section>
   );

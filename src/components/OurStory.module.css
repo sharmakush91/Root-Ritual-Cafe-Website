@@ -36,6 +36,7 @@
   background-color: #4f7a6a;
   color: #f5f0e6;
   cursor: pointer;
+  text-decoration: none;
   transition: all 0.3s ease;
 }
 

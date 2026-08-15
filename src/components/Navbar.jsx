@@ -13,22 +13,40 @@ export default function Navbar() {
 
       <div className={styles.links}>
         <NavLink to="/">Home</NavLink>
-        <NavLink to="/menu">Menu</NavLink>
-        <NavLink to="/book-a-table">Book a table</NavLink>
-        <NavLink to="/contact">Contact</NavLink>
+
+        <NavLink
+          to="/menu"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+        >
+          Menu
+        </NavLink>
+
+        <NavLink
+          to="/book-a-table"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+        >
+          Book a table
+        </NavLink>
+
+        <NavLink
+          to="/contact"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+        >
+          Contact
+        </NavLink>
       </div>
+
       <button className={styles.burger} onClick={() => setMenuOpen(!menuOpen)}>
         ☰
       </button>
 
       {menuOpen && (
-        <ul className={styles.mobileMenu}>
-          <li>Home</li>
-          <li>Menu</li>
-          <li>About</li>
-          <li>Book a table</li>
-          <li>Contact</li>
-        </ul>
+        <div className={styles.mobileMenu}>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/menu">Menu</NavLink>
+          <NavLink to="/book-a-table">Book a table</NavLink>
+          <NavLink to="/contact">Contact</NavLink>
+        </div>
       )}
     </nav>
   );
