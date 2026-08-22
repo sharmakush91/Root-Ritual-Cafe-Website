@@ -17,16 +17,12 @@ body {
 .nav {
   height: 90px;
   width: 100%;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding: 0 2rem;
-
   background-color: #4f7a6a;
   color: #f5f0e6;
-
   position: relative;
   z-index: 1000;
 }
@@ -43,9 +39,7 @@ body {
 .logo {
   height: 100px;
   width: auto;
-
   max-width: 180px;
-
   object-fit: contain;
   display: block;
 }
@@ -66,86 +60,122 @@ body {
   text-decoration: none;
   color: inherit;
   cursor: pointer;
-  transition: opacity 0.2s ease;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
 }
 
 .links a:hover {
-  opacity: 0.7;
+  color: #e3c29f;
 }
 
 .active {
-  opacity: 0.5; /* or color change */
+  color: #e3c29f !important;
 }
 
 /* =========================
    BURGER BUTTON
-   Hidden on desktop
    ========================= */
 
 .burger {
   display: none;
-
-  width: 42px;
-  height: 42px;
-
+  width: 44px;
+  height: 44px;
   padding: 0;
 
-  background: transparent;
-  border: none;
+  background: rgba(245, 240, 230, 0.1);
+  border: 1px solid rgba(245, 240, 230, 0.3);
+  border-radius: 12px;
 
   color: #f5f0e6;
-
-  font-size: 2rem;
+  font-size: 1.7rem;
   line-height: 1;
 
   cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.burger:hover {
+  background: rgba(245, 240, 230, 0.2);
+  border-color: rgba(245, 240, 230, 0.5);
+  transform: translateY(-1px);
+}
+
+.burger:active {
+  transform: translateY(0);
 }
 
 /* =========================
    MOBILE DROPDOWN
-   Hidden by default
    ========================= */
 
 .mobileMenu {
   display: none;
 
   position: absolute;
+  top: 90px;
+  right: 1rem;
 
-  top: 70px;
-  left: 0;
-
-  width: 100%;
+  width: min(280px, calc(100% - 2rem));
 
   flex-direction: column;
+  gap: 6px;
 
-  padding: 1rem;
+  padding: 12px;
 
-  gap: 0.5rem;
+  background: #f3eadb;
 
-  background-color: #4f7a6a;
+  border: 1px solid rgba(79, 122, 106, 0.2);
+  border-radius: 16px;
 
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
 
   z-index: 999;
 }
 
-.mobileMenu div {
-  padding: 0.9rem 1rem;
+/* IMPORTANT:
+   NavLink is an <a>, so style the anchors */
 
-  color: #f5f0e6;
+.mobileMenu a {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 13px 16px;
+
+  text-decoration: none;
+
+  color: #3d4d43;
 
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 
-  cursor: pointer;
+  border-radius: 10px;
 
-  border-radius: 6px;
-
-  transition: background-color 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
 }
 
-.mobileMenu div:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+.mobileMenu a:hover {
+  background-color: #e4d7c4;
+  color: #754833;
+  padding-left: 20px;
+}
+
+/* Active mobile link */
+
+.mobileMenu a.active {
+  background-color: #4f7a6a;
+  color: #f5f0e6 !important;
 }
 
 /* =========================
@@ -155,7 +185,6 @@ body {
 @media (max-width: 768px) {
   .nav {
     height: 70px;
-
     padding: 0 1rem;
   }
 
@@ -165,21 +194,22 @@ body {
   }
 
   /* Hide desktop navigation */
+
   .links {
     display: none;
   }
 
   /* Show burger */
+
   .burger {
     display: flex;
-
-    align-items: center;
-    justify-content: center;
   }
 
-  /* Mobile dropdown */
+  /* Show mobile menu */
+
   .mobileMenu {
     display: flex;
+    top: 70px;
   }
 }
 
@@ -190,7 +220,6 @@ body {
 @media (max-width: 480px) {
   .nav {
     height: 60px;
-
     padding: 0 1rem;
   }
 
@@ -199,7 +228,15 @@ body {
     max-width: 140px;
   }
 
+  .burger {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+
   .mobileMenu {
     top: 60px;
+    right: 0.75rem;
+    width: calc(100% - 1.5rem);
   }
 }

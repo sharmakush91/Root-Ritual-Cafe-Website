@@ -1,0 +1,274 @@
+.page {
+  min-height: 100vh;
+  width: 100%;
+  background: #f3eadb;
+  color: #332820;
+  overflow-x: hidden;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Main content */
+
+.content {
+  position: relative;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 70px 20px 90px;
+  text-align: center;
+}
+
+/* Funky background decoration */
+
+.backgroundShape {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: #c87955;
+  opacity: 0.18;
+  top: 100px;
+  right: -180px;
+  pointer-events: none;
+}
+
+.backgroundShape::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 48% 52% 60% 40%;
+  background: #77866e;
+  opacity: 0.35;
+  top: 550px;
+  right: 650px;
+}
+
+/* Page heading */
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #71806a;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 5rem);
+  line-height: 1;
+  letter-spacing: -2px;
+  color: #332820;
+}
+
+.subtitle {
+  margin: 22px auto 45px;
+  max-width: 550px;
+  color: #6d5d50;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+/* Booking card */
+
+.form {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 42px;
+  box-sizing: border-box;
+
+  background: rgba(255, 250, 241, 0.95);
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+
+  box-shadow: 0 25px 60px rgba(63, 47, 37, 0.14);
+
+  text-align: left;
+}
+
+/* Form heading */
+
+.formTitle {
+  margin: 0 0 8px;
+  color: #332820;
+  font-size: 1.9rem;
+}
+
+.formSubtitle {
+  margin: 0 0 30px;
+  color: #77685b;
+  line-height: 1.6;
+}
+
+/* Form grid */
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+/* Individual fields */
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroupFull {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Labels */
+
+.inputGroup label,
+.inputGroupFull label {
+  color: #44362c;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+/* Inputs */
+
+.inputGroup input,
+.inputGroupFull textarea {
+  width: 100%;
+  box-sizing: border-box;
+
+  border: 1px solid #d7c9b8;
+  border-radius: 12px;
+
+  background: #fffdf9;
+  color: #332820;
+
+  padding: 13px 15px;
+
+  font-family: inherit;
+  font-size: 0.95rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.inputGroup input {
+  height: 48px;
+}
+
+.inputGroupFull textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.inputGroup input::placeholder,
+.inputGroupFull textarea::placeholder {
+  color: #a89a8c;
+}
+
+/* Focus */
+
+.inputGroup input:focus,
+.inputGroupFull textarea:focus {
+  border-color: #a96548;
+  background: #ffffff;
+
+  box-shadow: 0 0 0 3px rgba(169, 101, 72, 0.12);
+}
+
+/* Button */
+
+.button {
+  width: 100%;
+  margin-top: 28px;
+  padding: 15px 20px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #8d5942;
+  color: #fffaf4;
+
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background: #754833;
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(76, 48, 35, 0.18);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* Tablet */
+
+@media (max-width: 700px) {
+  .content {
+    padding: 55px 16px 70px;
+  }
+
+  .form {
+    padding: 32px 25px;
+  }
+
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .inputGroupFull {
+    grid-column: auto;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .content {
+    padding: 45px 12px 60px;
+  }
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+  }
+
+  .form {
+    padding: 25px 18px;
+    border-radius: 20px;
+  }
+
+  .formTitle {
+    font-size: 1.6rem;
+  }
+
+  .backgroundShape {
+    width: 300px;
+    height: 300px;
+    right: -150px;
+  }
+}
